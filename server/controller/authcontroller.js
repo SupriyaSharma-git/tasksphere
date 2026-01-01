@@ -1,4 +1,3 @@
-import User from "../models/task.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
