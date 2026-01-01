@@ -1,5 +1,4 @@
 import jwt from "jsonwebtoken";
-import User from "../models/task.js";
 
 const SECRET_KEY = process.env.JWT_SECRET || "your_secret_key_here";
 
