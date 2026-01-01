@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Signup = () => {
   const navigate = useNavigate(); 
   const [error, setError] = useState("");
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000/api"; 
 
   const handleCancel = () => {
     navigate(-1);
@@ -53,7 +54,7 @@ const Signup = () => {
     console.log(formData);
     
     try {
-      const res = await fetch("http://localhost:4000/api/auth/signup", {
+      const res = await fetch(`${API_URL}/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

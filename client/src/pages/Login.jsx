@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate(); 
   const [error, setError] = useState("");
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000/api";
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -39,7 +40,7 @@ const Login = () => {
     alert("Form is valid, proceed with login!");
     console.log("Form submitted:", formData);
     try {
-      const res = await fetch("http://localhost:4000/api/auth/login", {
+      const res = await fetch(`${API_URL}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
