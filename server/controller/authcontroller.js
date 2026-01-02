@@ -1,7 +1,8 @@
+import User from "../models/Task.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
-const SECRET_KEY = process.env.JWT_SECRET || "your_secret_key_here";
+const SECRET_KEY = process.env.SECRET_KEY;
 
 const signup = async (req, res) => {
     try {

@@ -1,11 +1,12 @@
 import jwt from "jsonwebtoken";
+import User from "../models/User.js";
 
-const SECRET_KEY = process.env.JWT_SECRET || "your_secret_key_here";
+const SECRET_KEY = process.env.SECRET_KEY;
 
 const authMiddleware = async (req, res, next) => {
   try {
     const authHeader = req.headers.authorization;
-    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    if (!authHeader || !authHeader.startsWith("Bearer")) {
       return res.status(401).json({ error: "No token provided" });
     }
     const token = authHeader.split(" ")[1];
