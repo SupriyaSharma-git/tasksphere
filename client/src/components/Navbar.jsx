@@ -11,7 +11,7 @@ const Navbar = () => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
-      setEmail(parsedUser.email); // ✅ fix
+      setEmail(parsedUser.email);
     }
   }, []);
 
@@ -25,7 +25,7 @@ const Navbar = () => {
     <div className="bg-black text-white">
       {/* small screen */}
       <div className="w-full h-16 flex justify-between items-center md:hidden">
-        <div className="ml-5 font-sans font-bold text-blue-700">Taskify</div>
+        <div className="ml-5 font-sans font-bold text-blue-700">FocusHub</div>
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="mr-5 cursor-pointer"
