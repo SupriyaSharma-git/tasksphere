@@ -1,4 +1,6 @@
-import User from "../models/Task.js";
+import dotenv from "dotenv";
+dotenv.config();
+import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
@@ -8,7 +10,7 @@ const signup = async (req, res) => {
     try {
         const { name, email, password, task } = req.body;
         const existingUser = await User.findOne({ email });
-        if (existingUser) {
+        if (existingUser) { 
             return res.status(400).json({ error: "User already present" });
         }
         const hashedPassword = await bcrypt.hash(password, 10);
@@ -27,7 +29,6 @@ const signup = async (req, res) => {
         });
 
     } catch (error) {
-        console.log("Error occurred : ", error);
         return res.status(500).json({ error: "Server error" });
     }
 }
@@ -55,7 +56,9 @@ const login = async (req, res) => {
             }
         });
     } catch (error) {
-        console.log("Error occurred : ", error);
+        console.log("Login request body:", req.body);
+        console.log("SECRET_KEY:", SECRET_KEY);
+
         return res.status(500).json({ error: "Server error" });
     }
 }
@@ -68,7 +71,6 @@ const getMyTask = async (req, res) => {
         }
         res.status(200).json({ tasks: user.task })
     } catch (error) {
-        console.log("Error occurred : ", error);
         return res.status(500).json({ error: "Server error" });
     }
 }

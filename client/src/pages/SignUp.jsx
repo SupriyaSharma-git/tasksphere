@@ -49,8 +49,6 @@ const Signup = () => {
 
     setError("");
     alert("Form is valid, proceed with login!");
-
-    console.log(formData);
     
     try {
       const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/signup`, {
