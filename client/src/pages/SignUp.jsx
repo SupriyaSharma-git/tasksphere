@@ -51,7 +51,7 @@ const Signup = () => {
     alert("Form is valid, proceed with login!");
     
     try {
-      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/signup`, {
+      const res = await fetch(`https://tasksphere-qjf5.onrender.com/api/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

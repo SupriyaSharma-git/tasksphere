@@ -23,7 +23,7 @@ const MyTask = () => {
       try {
         const token = localStorage.getItem("token");
         const res = await axios.post(
-          "http://localhost:4000/api/auth/mytask",
+          "https://tasksphere-qjf5.onrender.com/api/auth/mytask",
           { mytask: newTask },
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -40,7 +40,7 @@ const MyTask = () => {
     if (updatedText && updatedText.trim() !== "") {
       try {
         const res = await axios.put(
-          `http://localhost:4000/api/auth/mytask/${taskId}`,
+          `https://tasksphere-qjf5.onrender.com/api/auth/mytask/${taskId}`,
           { mytask: updatedText },
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -54,7 +54,7 @@ const MyTask = () => {
   const handleDeleteTask = async (taskId) => {
     try {
       const res = await axios.delete(
-        `http://localhost:4000/api/auth/mytask/${taskId}`,
+        `https://tasksphere-qjf5.onrender.com/api/auth/mytask/${taskId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setmytask(res.data.tasks || []);
@@ -66,7 +66,7 @@ const MyTask = () => {
   useEffect(() => {
     const fetchTask = async () => {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:4000/api/auth/mytask", {
+      const res = await axios.get("https://tasksphere-qjf5.onrender.com/api/auth/mytask", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setmytask(res.data.tasks || []);

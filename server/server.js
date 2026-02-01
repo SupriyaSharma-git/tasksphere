@@ -12,7 +12,7 @@ const _dirname = path.resolve();
 
 const app = express();
 app.use(cors({
-  origin: process.env.FRONTEND_URL,
+  origin: "https://tasksphere-qjf5.onrender.com",
   credentials: true
 }));
 

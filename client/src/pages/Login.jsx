@@ -39,7 +39,7 @@ const Login = () => {
     alert("Form is valid, proceed with login!");
     console.log("Form submitted:", formData);
     try {
-      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`, {
+      const res = await fetch(`https://tasksphere-qjf5.onrender.com/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
