@@ -14,9 +14,9 @@
     "mongoosh": "^0.0.7"
   },
   "scripts": {
-    "dev": "nodemon server/server.js",
+    "dev": "node server/server.js",
     "build": "npm install && npm install --prefix client && npm run build --prefix client",
-    "start": "nodemon server/server.js"
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
