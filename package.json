@@ -11,13 +11,12 @@
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.1.1",
-    "mongoosh": "^0.0.7",
-    "semver": "^7.6.0"
+    "mongoosh": "^0.0.7"
   },
   "scripts": {
-    "dev": "node server/server.js",
+    "dev": "nodemon server/server.js",
     "build": "npm install && npm install --prefix client && npm run build --prefix client",
-    "start": "node server/server.js"
+    "start": "nodemon server/server.js"
   },
   "repository": {
     "type": "git",
